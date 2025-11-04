@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mini Market</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="foto/icon.png">
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Form Section (Left) -->
+        <div class="auth-form-section">
+            <h1 class="auth-title">Input Data</h1>
+            <form class="auth-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <input type="text" placeholder="Nama" class="auth-input" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" class="auth-input" required>
+                </div>
+                <button type="submit" class="auth-btn">Login</button>
+            </form>
+            
+            <div class="auth-links">
+                <a href="forgot-password.html" class="auth-link">Lupa Password</a>
+                <p class="auth-signup">Belum punya akun ? <a href="register.html" class="auth-link-highlight">Registrasi</a></p>
+            </div>
+        </div>
+
+        <!-- Image Section (Right) -->
+        <div class="auth-image-section">
+            <img src="foto/login.png" alt="Shopping Cart" class="auth-image">
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+            alert('Login berhasil! Redirect ke halaman utama...');
+            window.location.href = 'home.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi - Mini Market</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="foto/icon.png">
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Image Section (Left) -->
+        <div class="auth-image-section">
+            <img src="foto/registrasi.png" alt="Supermarket" class="auth-image">
+        </div>
+
+        <!-- Form Section (Right) -->
+        <div class="auth-form-section">
+            <h1 class="auth-title">Input Data</h1>
+            <form class="auth-form" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <input type="text" placeholder="Nama" class="auth-input" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Nomor Hp" class="auth-input" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" class="auth-input" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" class="auth-input" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Konfirmasi Password" class="auth-input" required>
+                </div>
+                <button type="submit" class="auth-btn">Registrasi</button>
+            </form>
+            
+            <p class="auth-login">Sudah punya akun ? <a href="index.html" class="auth-link-highlight">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        function handleRegister(e) {
+            e.preventDefault();
+            alert('Registrasi berhasil! Silakan login...');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

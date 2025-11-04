@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Mini Market Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="foto/icon.png">
+    <style>
+        /* Modal styling untuk logout confirmation */
+        body {
+            margin: 0;
+            padding: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .logout-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .logout-modal-content {
+            background: white;
+            padding: 50px 60px;
+            border-radius: 20px;
+            text-align: center;
+            animation: slideUp 0.4s ease-out;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .logout-modal-content h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 0 0 30px 0;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+
+        .logout-modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .logout-btn-cancel,
+        .logout-btn-exit {
+            flex: 1;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 140px;
+        }
+
+        .logout-btn-cancel {
+            background-color: #FFF8E7;
+            color: #1a1a1a;
+            border: 1px solid #E5E7EB;
+        }
+
+        .logout-btn-cancel:hover {
+            background-color: #F5F0E0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .logout-btn-cancel:active {
+            transform: translateY(0);
+        }
+
+        .logout-btn-exit {
+            background-color: #C9A961;
+            color: #1a1a1a;
+        }
+
+        .logout-btn-exit:hover {
+            background-color: #B8956A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
+        }
+
+        .logout-btn-exit:active {
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modal akan muncul otomatis saat halaman dibuka -->
+    <div class="logout-modal" id="logoutModal">
+        <div class="logout-modal-content">
+            <h2>Ingin Keluar ?</h2>
+            <div class="logout-modal-buttons">
+                <button class="logout-btn-cancel" id="cancelBtn">Batal</button>
+                <button class="logout-btn-exit" id="exitBtn">Keluar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cancelBtn = document.getElementById('cancelBtn');
+            const exitBtn = document.getElementById('exitBtn');
+            const logoutModal = document.getElementById('logoutModal');
+
+            cancelBtn.addEventListener('click', function() {
+                logoutModal.style.animation = 'fadeOut 0.3s ease-out forwards';
+                setTimeout(function() {
+                    window.history.back();
+                }, 300);
+            });
+
+            exitBtn.addEventListener('click', function() {
+                logoutModal.style.animation = 'fadeOut 0.3s ease-out forwards';
+                setTimeout(function() {
+                    window.location.href = './index.html';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>

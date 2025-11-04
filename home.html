@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Mini Market Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="foto/icon.png">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="foto/logo.png" alt="Mini Market Logo" class="logo-image">
+            </div>
+            <nav class="nav">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="laporan.html" class="nav-link">Laporan</a>
+            </nav>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search in site">
+                <button class="search-btn">🔍</button>
+            </div>
+            <!-- Added logout button outside search container -->
+            <a href="javascript:void(0)" class="logout-btn" onclick="confirmLogout()">Logout</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>Kinerja Mini Market</h1>
+        
+        <!-- Stats Cards -->
+        <div class="stats-container">
+            <div class="stat-card fade-in" style="animation-delay: 0s">
+                <p class="stat-label">Total Penjualan</p>
+                <h3 class="stat-value">Rp. 1.000.000</h3>
+                <p class="stat-change positive">📈 +5%</p>
+            </div>
+            <div class="stat-card fade-in" style="animation-delay: 0.1s">
+                <p class="stat-label">Stok Tersedia</p>
+                <h3 class="stat-value">150 Item</h3>
+                <p class="stat-change negative">📉 -2%</p>
+            </div>
+            <div class="stat-card fade-in" style="animation-delay: 0.2s">
+                <p class="stat-label">Pesanan Hari Ini</p>
+                <h3 class="stat-value">25</h3>
+                <p class="stat-change positive">📈 +10%</p>
+            </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="chart-section fade-in" style="animation-delay: 0.3s">
+            <h2>Tren Penjualan Bulan Ini</h2>
+            <p class="chart-subtitle">Total Penjualan</p>
+            <div class="chart-container">
+                <canvas id="salesChart" width="800" height="300"></canvas>
+            </div>
+        </div>
+
+        <!-- Activities Section -->
+        <div class="activities-section fade-in" style="animation-delay: 0.4s">
+            <h2>Aktivitas Terakhir</h2>
+            <p class="activities-subtitle">Riwayat transaksi dan pergerakan stok</p>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">📦</div>
+                    <div class="activity-content">
+                        <h4>Transaksi #123</h4>
+                        <p>Rp. 200.000 - 10 Produk</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">🔄</div>
+                    <div class="activity-content">
+                        <h4>Stok Diperbarui</h4>
+                        <p>5 Produk Masuk</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">📦</div>
+                    <div class="activity-content">
+                        <h4>Transaksi #124</h4>
+                        <p>Rp. 150.000 - 5 Produk</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">🔄</div>
+                    <div class="activity-content">
+                        <h4>Stok Diperbarui</h4>
+                        <p>3 Produk Keluar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Mini Market Management</p>
+    </footer>
+
+    <!-- Added logout confirmation modal -->
+    <div id="logoutModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Ingin Keluar ?</h2>
+            <div class="modal-buttons">
+                <button class="btn btn-cancel" onclick="cancelLogout()">Batal</button>
+                <button class="btn btn-logout" onclick="proceedLogout()">Keluar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

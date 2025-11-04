@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan - Mini Market Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="foto/icon.png">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="foto/logo.png" alt="Mini Market Logo" class="logo-image">
+            </div>
+            <nav class="nav">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="laporan.html" class="nav-link">Laporan</a>
+            </nav>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search in site">
+                <button class="search-btn">🔍</button>
+            </div>
+            <!-- Added logout button outside search container -->
+            <a href="javascript:void(0)" class="logout-btn" onclick="confirmLogout()">Logout</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>Laporan Penjualan</h1>
+        
+        <!-- Distribution Section -->
+        <div class="report-section fade-in" style="animation-delay: 0s">
+            <h2>Distribusi Penjualan</h2>
+            <p class="report-subtitle">Persentase</p>
+            <div class="chart-container">
+                <canvas id="pieChart" width="600" height="300"></canvas>
+            </div>
+        </div>
+
+        <!-- Export Section -->
+        <div class="export-section fade-in" style="animation-delay: 0.2s">
+            <h2>Ekspor Laporan</h2>
+            <div class="export-format">
+                <label>Pilih Format</label>
+                <div class="format-buttons">
+                    <button class="btn btn-format" onclick="selectFormat('excel')">EXCEL</button>
+                    <button class="btn btn-format" onclick="selectFormat('pdf')">PDF</button>
+                    <button class="btn btn-format" onclick="selectFormat('word')">WORD</button>
+                </div>
+            </div>
+            <button class="btn btn-export" onclick="downloadReport()">⬇ Ekspor</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Mini Market Management</p>
+    </footer>
+
+    <!-- Added logout confirmation modal -->
+    <div id="logoutModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Ingin Keluar ?</h2>
+            <div class="modal-buttons">
+                <button class="btn btn-cancel" onclick="cancelLogout()">Batal</button>
+                <button class="btn btn-logout" onclick="proceedLogout()">Keluar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
